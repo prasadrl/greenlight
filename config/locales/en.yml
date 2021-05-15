@@ -567,7 +567,6 @@ en:
     invalid_provider: You have entered an invalid url. Please check the url and try again.
     invitation_description: You have been invited to join %{name}. To join, click the link above and enter your name.
     invited: You have been invited to join
-    owner_invited: has invited you to join
     recording_present: I acknowledge that this session is going to be recorded. This may include my voice and video if enabled.
     invite_participants: Invite Participants
     join: Join
@@ -575,6 +574,7 @@ en:
     login: Enter
     owner: Owner
     owner_banned: This room is currently unavailable
+    owner_invited: has invited you to join
     no_room:
       description: Enter the room url or the room id for the room you want to join.
       edit_profile: Edit User Profile
