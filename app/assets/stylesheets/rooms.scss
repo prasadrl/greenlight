@@ -83,6 +83,21 @@
   }
 }
 
+.curved-border {
+  border-radius: 6px;
+}
+
+.cta-button {
+  font-size: 21px !important;
+  float: left;
+}
+
+.cta-icon {
+  font-size: 20px !important;
+  padding-top: 1px;
+  border-radius: 4px;
+}
+
 .allow-icon-click{
   pointer-events: auto;
 }

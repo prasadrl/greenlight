@@ -1,5 +1,5 @@
 <% exceeds_limit = current_room_exceeds_limit(@room)%>
-<div class="background col-12 p-0 m-0">
+<div class="background col-12 p-0 m-0 curved-border">
     <div class="px-6 pt-5">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
             <h1 contenteditable=false id="user-text" class="display-3 text-left mb-1 mt-1 font-weight-400 text-break"><%= title(@room.name) %></h1>
@@ -19,7 +19,7 @@
                 <div class="col-lg-6 pr-lg-7 col-md-12 pl-lg-0">
                     <div class="row">
                         <div class="col-4 mt-2">
-                            <button id="copy-invite" class="btn btn-secondary btn-block" onclick="copyInvite()">
+                            <button id="copy-invite" class="btn btn-secondary btn-block curved-border" onclick="copyInvite()">
                                 <i class="fas fa-copy mr-1"></i>
                                 <%= t("copy") %>
                             </button>
@@ -27,14 +27,14 @@
                         <div class="btn-group-vertical col-sm-6 pl-0 mt-2">
                             <% if @room.access_code.present? %>
                                 <input id="copy-code" value="<%= @room.access_code %>" type="hidden">
-                                <button id="copy-access" class="btn btn-secondary btn-block" onclick="copyAccess()">
+                                <button id="copy-access" class="btn btn-secondary btn-block curved-border" onclick="copyAccess()">
                                     <i class="fas fa-copy mr-1"></i>
                                     <%= t("room.copy_access") %>
                                 </button>
                             <% end %>
                             <% if moderator_code_allowed? && @room.moderator_access_code.present? %>
                                 <input id="copy-moderator-code" value="<%= @room.moderator_access_code %>" type="hidden">
-                                <button id="copy-moderator-access" class="btn btn-secondary btn-block" onclick="copyAccess('moderator')">
+                                <button id="copy-moderator-access" class="btn btn-secondary btn-block curved-border" onclick="copyAccess('moderator')">
                                     <i class="fas fa-copy mr-1"></i>
                                     <%= t("room.copy_moderator_access") %>
                                 </button>
@@ -49,10 +49,10 @@
             <div class="row">
                 <div  class="col-lg-4 col-md-8 col-sm-12 mt-6 mb-6 px-0">
                     <% if @room_running %>
-                        <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block start-button", "data-disable": "" %>
+                        <%= button_to t("room.join"), room_path(@room), class: "btn btn-primary btn-block start-button curved-border", "data-disable": "" %>
                     <% else %>
                         <% unless exceeds_limit %>
-                        <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-primary btn-block start-button", "data-disable": "" %>
+                        <%= button_to t("room.start"), start_room_path(@room), class: "btn btn-primary btn-block start-button curved-border", "data-disable": "" %>
                         <% end %>
                     <% end %>  
                 </div>
