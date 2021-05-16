@@ -1,0 +1,35 @@
+<div class="m-0 p-0">
+    <% if total_room_count(current_user) > 5 %>
+        <div class="input-icon invite-link-input mb-3">
+            <span class="input-icon-addon">
+                <i class="fas fa-search"></i>
+            </span>
+            <input id="room-search" type="text" placeholder="<%= t("room.search") %>" class="form-control w-100" onChange="filterRooms()" onKeyUp="filterRooms()">
+            <span id="clear-room-search" class="text-primary" onclick="clearRoomSearch()">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+    <% end %>
+
+    <div id="room_block_container" class="row">
+        <% if current_user.role.get_permission("can_create_rooms") %>
+            <% current_user.ordered_rooms.each do |room| %>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                <%= link_to room do %>
+                    <%= render "rooms/components/room_list_item", room: room %>
+                <% end %>
+                </div>
+            <% end %>
+        <% end %>
+
+        <% if shared_access_allowed %>
+            <% current_user.shared_rooms.each do |room| %>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <%= link_to room do %>
+                        <%= render "rooms/components/shared_room_block", room: room %>
+                    <% end %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>

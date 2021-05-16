@@ -575,14 +575,15 @@ en:
     owner: Owner
     owner_banned: This room is currently unavailable
     owner_invited: has invited you to join
+    owner_rooms: Rooms
     no_room:
       description: Enter the room url or the room id for the room you want to join.
       edit_profile: Edit User Profile
       go_to: Go to the Room
       invalid_room_uid: The room url/uid you entered was invalid.
-      placeholder: Room url/uid
+      placeholder: Enter Room Invite Code or Meeting URL
       no_recent_rooms: You don't have any recently joined rooms
-      recent_rooms: Go To a Recently Joined Room
+      recent_rooms: Recent Rooms
       title: Join a Room
     no_sessions: This room has no sessions, yet!
     preupload_success: Successfully added presentation
@@ -600,7 +601,7 @@ en:
     remove_shared_access_error: There was an error removing the shared room from your list
     shared_access_success: Room shared successfully
     shared_access_error: There was an error sharing the room
-    start: Start
+    start: Start Meeting
     search: Search for room…
     unavailable: This room is currently unavailable due to the owner's email not being verified.
     update_settings_error: There was an error updating the room settings

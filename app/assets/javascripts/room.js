@@ -30,6 +30,10 @@ $(document).on('turbolinks:load', function(){
       showCreateRoom(this)
     })
 
+    $("#join-room-block").click(function(){
+      showJoinRoom(this)
+    })
+
     checkIfAutoJoin()
   }
 
@@ -226,6 +230,9 @@ function showCreateRoom(target) {
     $(this).attr('style',"display:none !important")
     if($(this).children().length > 0) { $(this).children().attr('style',"display:none !important") }
   })
+}
+
+function showJoinRoom(target) {
 }
 
 function showUpdateRoom(target) {

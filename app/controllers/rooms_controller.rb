@@ -69,6 +69,7 @@ class RoomsController < ApplicationController
     @anyone_can_start = room_setting_with_config("anyoneCanStart")
     @room_running = room_running?(@room.bbb_id)
     @shared_room = room_shared_with_user
+    @recent_rooms = Room.where(id: cookies.encrypted["#{current_user.uid}_recently_joined_rooms"])
 
     # If its the current user's room
     if current_user && (@room.owned_by?(current_user) || @shared_room)

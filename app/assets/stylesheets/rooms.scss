@@ -74,6 +74,15 @@
   }
 }
 
+#join-room-block {
+  border: 1px dashed lightgray;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
 .allow-icon-click{
   pointer-events: auto;
 }
