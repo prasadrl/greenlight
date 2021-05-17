@@ -118,7 +118,7 @@ module Rolify
     return false if role.priority <= current_user_role.priority || role.provider != @user_domain
 
     role_params = params.require(:role).permit(:name)
-    permission_params = params.require(:role).permit(:can_create_rooms, :send_promoted_email,
+    permission_params = params.require(:role).permit(:can_create_rooms, :can_record, :send_promoted_email,
       :send_demoted_email, :can_edit_site_settings, :can_edit_roles, :can_manage_users,
       :can_manage_rooms_recordings, :can_appear_in_share_list, :colour)
 

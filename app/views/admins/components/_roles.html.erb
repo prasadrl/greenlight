@@ -53,6 +53,11 @@
                     <%= f.check_box :can_create_rooms, checked: @selected_role.get_permission("can_create_rooms"), class: "custom-switch-input", disabled: edit_disabled || !current_role.get_permission("can_create_rooms") %>
                 <span class="custom-switch-indicator float-right"></span>
             </label>
+            <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block <%="form-disable" if !current_role.get_permission("can_record") %>">
+                <span class="ml-0 custom-switch-description"><%= t("administrator.roles.can_record")%></span>
+                    <%= f.check_box :can_record, checked: @selected_role.get_permission("can_record"), class: "custom-switch-input", disabled: edit_disabled || !current_role.get_permission("can_record") %>
+                <span class="custom-switch-indicator float-right"></span>
+            </label>
             <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block <%="form-disable" if !current_role.get_permission("can_manage_users") %>">
                 <span class="ml-0 custom-switch-description"><%= t("administrator.roles.manage_users")%></span>
                     <%= f.check_box :can_manage_users, checked: @selected_role.get_permission("can_manage_users"), class: "custom-switch-input", disabled: edit_disabled || !current_role.get_permission("can_manage_users") %>
