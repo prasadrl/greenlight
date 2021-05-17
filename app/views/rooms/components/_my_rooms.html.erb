@@ -13,13 +13,19 @@
 
     <div id="room_block_container" class="row">
         <% if current_user.role.get_permission("can_create_rooms") %>
-            <% current_user.ordered_rooms.each do |room| %>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                <%= link_to room do %>
-                    <%= render "rooms/components/room_list_item", room: room %>
+            <nav class="nav nav-pills nav-fill curved-border">
+                <% current_user.ordered_rooms.each do |room| %>
+                    <% if room == @room %>
+                        <%= link_to room, class:"nav-item nav-link room-nav-link active" do %>
+                            <span class="white-color"><%= room.name %></span>
+                        <% end %>
+                    <% else %>
+                        <%= link_to room, class:"nav-item nav-link room-nav-link" do %>
+                            <%= room.name %>
+                        <% end %>
+                    <% end %>
                 <% end %>
-                </div>
-            <% end %>
+            </nav>
         <% end %>
 
         <% if shared_access_allowed %>

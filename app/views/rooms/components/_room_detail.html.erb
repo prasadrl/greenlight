@@ -1,8 +1,8 @@
 <% exceeds_limit = current_room_exceeds_limit(@room)%>
 <div class="background col-12 p-0 m-0 curved-border room-block">
-    <div class="px-6 pt-5">
-        <div id="room-title" class="display-3 form-inline" data-path="<%= update_settings_path(@room) %>">
-            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-1 mt-1 font-weight-400 text-break room-name-text"><%= title(@room.name) %></h1>
+    <div class="px-6 pt-3">
+        <div id="room-title" class="display-4 form-inline" data-path="<%= update_settings_path(@room) %>">
+            <h2 contenteditable=false id="user-text" class="display-4 text-left mb-1 mt-1 font-weight-400 text-break room-name-text"><%= title(@room.name) %></h2>
             <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>">
                 <div class="item-action dropdown" data-display="static">
                     <a href="#" data-toggle="dropdown" data-display="static" class="icon">
@@ -35,7 +35,7 @@
         <% unless exceeds_limit %>
             <label class="form-label"><%= t("room.invite_participants") %></label>
             <div class="row">
-                <div class="col-lg-6 col-md-12 mt-2">
+                <div class="col-lg-6 col-sm-12 mt-1 mb-2">
                     <div class="input-icon invite-link-input">
                         <span class="input-icon-addon">
                             <i class="fas fa-link"></i>
@@ -43,15 +43,15 @@
                         <input id="invite-url" type="text" class="form-control w-100" value="<%= request.base_url + @room.invite_path %>" readonly="">
                     </div>
                 </div>
-                <div class="col-lg-6 pr-lg-7 col-md-12 pl-lg-0">
+                <div class="col-lg-6 col-sm-12 pl-lg-0 mt-1 mb-2">
                     <div class="row">
-                        <div class="col-4 mt-2">
+                        <div class="col-4">
                             <button id="copy-invite" class="btn btn-secondary btn-block curved-border" onclick="copyInvite()">
                                 <i class="fas fa-copy mr-1"></i>
                                 <%= t("copy") %>
                             </button>
                         </div>
-                        <div class="btn-group-vertical col-sm-6 pl-0 mt-2">
+                        <div class="btn-group-vertical col-lg-6 col-md-4 col-sm-6 col-xs-6 pl-0">
                             <% if @room.access_code.present? %>
                                 <input id="copy-code" value="<%= @room.access_code %>" type="hidden">
                                 <button id="copy-access" class="btn btn-secondary btn-block curved-border" onclick="copyAccess()">

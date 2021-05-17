@@ -107,6 +107,27 @@
   align-items: center;
 }
 
+.white-color {
+  color:white;
+}
+
+.room-nav-link {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 18px !important;
+  font-weight: 400;
+}
+
+#room_block_container {
+  margin-left: 0px;
+}
+
 .allow-icon-click{
   pointer-events: auto;
 }
