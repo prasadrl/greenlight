@@ -1,6 +1,6 @@
 <% exceeds_limit = current_room_exceeds_limit(@room)%>
-<div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>">
-<div class="background col-12 p-0 m-0 curved-border room-block">
+<div class="room-block" data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>">
+<div class="background col-12 p-0 m-0 curved-border">
     <div class="px-6 pt-3">
         <div id="room-title" class="display-4 form-inline" data-path="<%= update_settings_path(@room) %>">
             <h2 contenteditable=false id="user-text" class="display-4 text-left mb-1 mt-1 font-weight-400 text-break room-name-text"><%= title(@room.name) %></h2>
@@ -12,7 +12,7 @@
                     <i class="fas fa-chevron-down room-detail-dropdown-icon px-4"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
-                    <a href="" data-toggle="modal" data-target="#createRoomModal" class="update-room dropdown-item" data-settings-path="<%= room_settings_path(room) %>">
+                    <a href="" data-toggle="modal" data-target="#createRoomModal" class="update-room dropdown-item" data-settings-path="<%= room_settings_path(@room) %>">
                         <i class="dropdown-icon fas fa-cog"></i> <%= t("room.settings") %>
                     </a>
                     <% if preupload_allowed? %>
