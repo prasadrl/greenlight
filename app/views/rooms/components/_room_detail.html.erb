@@ -1,9 +1,12 @@
 <% exceeds_limit = current_room_exceeds_limit(@room)%>
+<div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>">
 <div class="background col-12 p-0 m-0 curved-border room-block">
     <div class="px-6 pt-3">
         <div id="room-title" class="display-4 form-inline" data-path="<%= update_settings_path(@room) %>">
             <h2 contenteditable=false id="user-text" class="display-4 text-left mb-1 mt-1 font-weight-400 text-break room-name-text"><%= title(@room.name) %></h2>
-            <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>">
+            <div style="display: none">
+                <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
+            </div>
                 <div class="item-action dropdown" data-display="static">
                     <a href="#" data-toggle="dropdown" data-display="static" class="icon">
                     <i class="fas fa-chevron-down room-detail-dropdown-icon px-4"></i>
@@ -29,7 +32,6 @@
                     <% end %>
                     </div>
                 </div>
-            </div>
         </div>
         <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %><% unless hide_recording_tables %> | <%= @recordings.length %> <%= t("room.recordings") %><% end %></h4>
         <% unless exceeds_limit %>
@@ -105,4 +107,5 @@
   <%= render "shared/modals/share_room_modal" %>
   <%= render "shared/modals/remove_access_modal" %>
 <% end %>
+</div>
 </div>
